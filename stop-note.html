@@ -22,6 +22,7 @@ A LRN element
         width: auto;
         --background-color: #f7f7f7;
         --accent-color: #d8261c;
+        margin-bottom: 20px;
       }
 
       .container {
@@ -93,8 +94,9 @@ A LRN element
       </div>
       <div class="message_wrap">
         <div class="main_message">Read the Textbook</div>
-        <div class="secondary_message">For additional information, please refer to chapter [[chapter]], section [[section]], pages [[pages]].</div>
-      </div>
+        <div class="secondary_message">
+          <slot name="message"></slot>
+       </div>
     </div>
   </template>
 
@@ -109,30 +111,7 @@ A LRN element
       ],
 
       properties: {
-        /**
-         * The chapter to be viewed.
-         */
-        chapter: {
-          type: String,
-          value: '',
-          reflectToAttribute: true,
-        },
-        /**
-         * The pages to be viewed.
-         */
-        pages: {
-          type: String,
-          value: '',
-          reflectToAttribute: true,
-        },
-        /**
-         * The section to be viewed.
-         */
-         section: {
-          type: String,
-          value: '',
-          reflectToAttribute: true,
-        },
+
 
       },
       /**
