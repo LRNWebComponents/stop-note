@@ -96,8 +96,8 @@ A LRN element
         <div class="main_message">Read the Textbook</div>
         <div class="secondary_message">
           <slot name="message"></slot>
-       </div>
-    </div>
+        </div>
+      </div>
   </template>
 
   <script>
@@ -142,34 +142,20 @@ A LRN element
           'settings': {
             'quick': [
               {
-                'property': 'chapter',
-                'title': 'Chapter',
-                'description': 'The textbook chapter that should be referenced',
-                'inputMethod': 'textfield',
-                'icon': 'icons:book',
-              },
-              {
-                'property': 'pages',
-                'title': 'Pages',
-                'description': 'The pages that should be referenced',
-                'inputMethod': 'textfield',
-                'icon': 'icons:content-copy',
+                'slot': 'message',
+                'title': 'Message',
+                'description': 'This is where you enter a message for stop-note.',
+                'inputMethod': 'code-editor',
+                'required': true,
               },
             ],
             'configure': [
               {
-                'property': 'chapter',
-                'title': 'Chapter',
-                'description': 'The textbook chapter that should be referenced',
-                'inputMethod': 'textfield',
-                'icon': 'icons:book',
-              },
-              {
-                'property': 'pages',
-                'title': 'Pages',
-                'description': 'The pages that should be referenced',
-                'inputMethod': 'textfield',
-                'icon': 'icons:content-copy',
+                'slot': 'message',
+                'title': 'Message',
+                'description': 'This is where you enter a message for stop-note.',
+                'inputMethod': 'code-editor',
+                'required': true,
               },
             ],
             'advanced': [
