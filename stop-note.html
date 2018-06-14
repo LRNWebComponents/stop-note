@@ -24,7 +24,7 @@ A LRN element
         display: block;
         width: auto;
         --background-color: #f7f7f7;
-        --accent-color: #d8261c;
+        --accent-color: #d32f2f;
         margin-bottom: 20px;
       }
 
@@ -42,7 +42,7 @@ A LRN element
 
       .main_message {
         font-size: 2em;
-        color: var(--accent-color);
+        color: #000;
         margin-top: 10px;
       }
 
@@ -50,6 +50,19 @@ A LRN element
         margin-top: 5px;
         font-size: 1.2em;
         float: left;
+      }
+
+      .link a {
+        margin-top: 5px;
+        font-size: 1.2em;
+        float: left;
+        clear: left;
+        text-decoration: none;
+        color: #2196f3;
+      }
+
+      .link a:hover {
+        color: #1976d2;
       }
 
       .svg {
@@ -67,8 +80,6 @@ A LRN element
         height: 100px;
         width: 100px;
       }
-
-
     </style>
 
     <div class="container">
@@ -78,9 +89,12 @@ A LRN element
         </div>
       </div>
       <div class="message_wrap">
-        <div class="main_message">Read the Textbook</div>
+        <div class="main_message">[[title]]</div>
         <div class="secondary_message">
           <slot name="message"></slot>
+        </div>
+        <div class="link">
+          <a href="[[url]]" target="_blank">More Information ></a>
         </div>
       </div>
   </template>
@@ -96,8 +110,23 @@ A LRN element
       ],
 
       properties: {
+        /**
+         * Title Message
+         */
+        title: {
+          type: String,
+          value: 'Read the Textbook',
+          reflectToAttribute: true,
+        },
 
-
+        /**
+         * url to additional resources
+         */
+        url: {
+          type: String,
+          value: '',
+          reflectToAttribute: true,
+        },
       },
       /**
        * Attached to the DOM, now fire.
