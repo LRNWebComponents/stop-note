@@ -105,9 +105,11 @@ A LRN element
         <div class="secondary_message">
           <slot name="message"></slot>
         </div>
-        <div class="link">
-          <a href="[[url]]" target="_blank">More Information ></a>
-        </div>
+        <template is="dom-if" if="[[url]]">
+          <div class="link">
+            <a href="[[url]]" target="_blank">More Information ></a>
+          </div>
+        </template>
       </div>
   </template>
 
@@ -136,7 +138,7 @@ A LRN element
          */
         url: {
           type: String,
-          value: '',
+          value: null,
           reflectToAttribute: true,
         },
 
@@ -145,7 +147,7 @@ A LRN element
          */
         icon: {
           type: String,
-          value: '',
+          value: 'stopnoteicons:stop-icon',
           reflectToAttribute: true,
         },
       },
