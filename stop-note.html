@@ -150,9 +150,23 @@ A LRN element
           reflectToAttribute: true,
         },
       },
+
+      observers: [
+        '_iconChanged(icon)'
+      ],
+
+      /**
+       * Update styles based on icon selected.
+       */
+
+      _iconChanged: function (icon) {
+        this.updateStyles();
+      },
+      
       /**
        * Attached to the DOM, now fire.
        */
+
       attached: function () {
         // Establish hax property binding
         let props = {
