@@ -106,7 +106,7 @@ A LRN element
         </div>
         <template is="dom-if" if="[[url]]">
           <div class="link">
-            <a href="[[url]]" target="_blank">More Information ></a>
+            <a href="[[url]]" target$="[[_urlTarget(url)]]">More Information ></a>
           </div>
         </template>
       </div>
@@ -120,6 +120,10 @@ A LRN element
         HAXBehaviors.PropertiesBehaviors,
         MaterializeCSSBehaviors.ColorBehaviors,
         SchemaBehaviors.Schema
+      ],
+
+      observers: [
+        '_iconChanged(icon)',
       ],
 
       properties: {
@@ -151,10 +155,6 @@ A LRN element
         },
       },
 
-      observers: [
-        '_iconChanged(icon)'
-      ],
-
       /**
        * Update styles based on icon selected.
        */
@@ -162,7 +162,31 @@ A LRN element
       _iconChanged: function (icon) {
         this.updateStyles();
       },
-      
+
+      /**
+       * Evaluates url for correct targeting.
+       */
+
+      _urlTarget: function (url) {
+        if (url) {
+          const external = this._outsideLink(url);
+          if (external) {
+            return "_blank";
+          }
+        }
+        return false;
+      },
+
+      /**
+       * Internal function to check if a url is external
+       */
+      _outsideLink: function (url) {
+        if (url.indexOf('http') != 0) return false;
+        var loc = location.href, path = location.pathname,
+          root = loc.substring(0, loc.indexOf(path));
+        return url.indexOf(root) != 0;
+      },
+
       /**
        * Attached to the DOM, now fire.
        */
