@@ -27,6 +27,11 @@ A LRN element
         --accent-color: #d32f2f;
         margin-bottom: 20px;
       }
+      
+      iron-icon {
+        height: 100px;
+        width: 100px;
+      }
 
       :host[icon="stopnoteicons:stop-icon"] {
         --accent-color: #d8261c;
@@ -54,7 +59,6 @@ A LRN element
 
       .main_message {
         font-size: 2em;
-        color: #000;
         margin-top: 10px;
       }
 
@@ -86,11 +90,6 @@ A LRN element
         background-color: var(--accent-color);
         padding: 5px;
         width: auto;
-      }
-
-      iron-icon {
-        height: 100px;
-        width: 100px;
       }
     </style>
 
@@ -179,13 +178,6 @@ A LRN element
           'settings': {
             'quick': [
               {
-                'property': 'icon',
-                'title': 'Icon',
-                'description': 'Enter icon for stop-note.',
-                'inputMethod': 'textfield',
-                'required': true,
-              },
-              {
                 'property': 'title',
                 'title': 'Title',
                 'description': 'Enter title for stop-note.',
@@ -208,13 +200,6 @@ A LRN element
               },
             ],
             'configure': [
-              {
-                'property': 'icon',
-                'title': 'Icon',
-                'description': 'Enter icon for stop-note.',
-                'inputMethod': 'textfield',
-                'required': true,
-              },
               {
                 'property': 'title',
                 'title': 'Title',
