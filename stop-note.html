@@ -45,6 +45,10 @@ A LRN element
         --accent-color: #81c784;
       }
 
+      :host[icon="stopnoteicons:book-icon"] {
+        --accent-color: #21a3db;
+      }
+
       .container {
         display: flex;
         width: auto;
@@ -132,7 +136,7 @@ A LRN element
          */
         title: {
           type: String,
-          value: 'Read the Textbook',
+          value: 'Title',
           reflectToAttribute: true,
         },
 
@@ -261,6 +265,7 @@ A LRN element
                   'stopnoteicons:stop-icon',
                   'stopnoteicons:warning-icon',
                   'stopnoteicons:confirm-icon',
+                  'stopnoteicons:book-icon',
                 ],
               },
             ],

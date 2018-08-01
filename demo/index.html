@@ -23,7 +23,7 @@
     <demo-snippet>
       <template>
         <stop-note>
-          <span slot="message">You can write anything you want here (Chapters, Sections, or Pages).</span>
+          <span slot="message">You can write any error message you want here.</span>
         </stop-note>
       </template>
     </demo-snippet>
@@ -32,8 +32,8 @@
     <h3>Basic stop-note demo: URL</h3>
     <demo-snippet>
       <template>
-        <stop-note url="https://www.google.com">
-          <span slot="message">You can write anything you want here (Chapters, Sections, or Pages).</span>
+        <stop-note title="Error" url="https://www.google.com">
+          <span slot="message">You can write any error message you want here.</span>
         </stop-note>
       </template>
     </demo-snippet>
@@ -43,7 +43,7 @@
     <demo-snippet>
       <template>
         <stop-note title="Warning Message" url="https://www.google.com" icon="stopnoteicons:warning-icon">
-          <span slot="message">You can write anything you want here (Chapters, Sections, or Pages).</span>
+          <span slot="message">You can write any warning message you want here.</span>
         </stop-note>
       </template>
     </demo-snippet>
@@ -53,11 +53,21 @@
     <demo-snippet>
       <template>
         <stop-note title="Confirmation Message" url="https://www.google.com" icon="stopnoteicons:confirm-icon">
-          <span slot="message">You can write anything you want here (Chapters, Sections, or Pages).</span>
+          <span slot="message">You can write any confirmation message you want here.</span>
         </stop-note>
       </template>
     </demo-snippet>
   </div>
+  <div class="vertical-section-container">
+      <h3>Basic stop-note demo: Read</h3>
+      <demo-snippet>
+        <template>
+          <stop-note title="Read the Textbook" icon="stopnoteicons:book-icon">
+            <span slot="message">You can write anything you want here (chapters, pages, etc.).</span>
+          </stop-note>
+        </template>
+      </demo-snippet>
+    </div>
 </body>
 
 </html>
